@@ -14,7 +14,7 @@ struct EmailTextField: View {
     var body: some View {
         HStack{
             Image(systemName: "envelope.fill").foregroundColor(COLOR_GRAY_30)
-            TextField(TEXT_EMAIL, text: $email)
+            TextField(TEXT_EMAIL, text: $email).autocapitalization(.none)
         }.modifier(TextFieldModifier())
     }
 }

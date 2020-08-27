@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
+import FirebaseStorage
 
 struct SignupView: View {
     @State var username : String = ""
@@ -17,6 +20,45 @@ struct SignupView: View {
     @State var imageData : Data = Data()
     func signUp() {
 //        Firebase.createAccount(username: username, email: email, password: password, imageData: imageData)
+        Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
+            if error != nil {
+                return
+            }
+            
+            guard let userId = authData?.user.uid else { return }
+        
+            let storageRoot = Storage.storage().reference(forURL: "gs://swiftui-instagram-74101.appspot.com/")
+            let storageAvatar = storageRoot.child("avatar")
+            let storageAvatarUserId = storageAvatar.child(userId)
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            
+            storageAvatarUserId.putData(self.imageData, metadata: metaData) { (storageMetaData, error) in
+                if error != nil {
+                    return
+                }
+                
+                storageAvatarUserId.downloadURL { (url, error) in
+                    if let metaImageUrl = url?.absoluteString {
+                        if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+                            changeRequest.photoURL = url
+                            changeRequest.displayName = self.username
+                            changeRequest.commitChanges { (error) in
+                                if error != nil {
+                                    return
+                                }
+                            }
+                        }
+                        let firestoreRoot = Firestore.firestore()
+                        let firestoreUsers = firestoreRoot.collection("users")
+                        let firestoreUserId = firestoreUsers.document(userId)
+                        let userInfo = ["username" : self.username, "email" : self.email, "profileImageUrl" : metaImageUrl]
+                        
+                        firestoreUserId.setData(userInfo)
+                    }
+                }
+            }
+        }
     }
     
     var body: some View {
