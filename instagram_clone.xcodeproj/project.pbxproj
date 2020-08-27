@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		26512B2324F4EFA80055B39D /* UserNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26512B2224F4EFA80055B39D /* UserNameTextField.swift */; };
 		26512B2524F4F0E10055B39D /* SignupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26512B2424F4F0E10055B39D /* SignupButton.swift */; };
 		26CBC58D24F7619F00E26790 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26CBC58C24F7619F00E26790 /* GoogleService-Info.plist */; };
+		26CBC58F24F76C2100E26790 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CBC58E24F76C2100E26790 /* ImagePicker.swift */; };
 		C0054662B73A372B9CA079A0 /* Pods_instagram_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AAFFFB7DF19164B2A2295C /* Pods_instagram_clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		26512B2224F4EFA80055B39D /* UserNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTextField.swift; sourceTree = "<group>"; };
 		26512B2424F4F0E10055B39D /* SignupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupButton.swift; sourceTree = "<group>"; };
 		26CBC58C24F7619F00E26790 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26CBC58E24F76C2100E26790 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		BE4DE9033B96FE1394FFC02C /* Pods-instagram_clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone.release.xcconfig"; path = "Target Support Files/Pods-instagram_clone/Pods-instagram_clone.release.xcconfig"; sourceTree = "<group>"; };
 		C323DB11C902B10FCD6BEC35 /* Pods-instagram_clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone.debug.xcconfig"; path = "Target Support Files/Pods-instagram_clone/Pods-instagram_clone.debug.xcconfig"; sourceTree = "<group>"; };
 		E1AAFFFB7DF19164B2A2295C /* Pods_instagram_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +80,6 @@
 				C323DB11C902B10FCD6BEC35 /* Pods-instagram_clone.debug.xcconfig */,
 				BE4DE9033B96FE1394FFC02C /* Pods-instagram_clone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,6 +107,7 @@
 				26512AFB24F4DA1B0055B39D /* AppDelegate.swift */,
 				26512AFD24F4DA1B0055B39D /* SceneDelegate.swift */,
 				26512AFF24F4DA1B0055B39D /* SigninView.swift */,
+				26CBC58E24F76C2100E26790 /* ImagePicker.swift */,
 				26512B2024F4EDCB0055B39D /* SignupView.swift */,
 				26512B1E24F4E9740055B39D /* Constants.swift */,
 				26512B1C24F4E7DB0055B39D /* Modifiers.swift */,
@@ -260,6 +262,7 @@
 				26512AFC24F4DA1B0055B39D /* AppDelegate.swift in Sources */,
 				26512B1124F4E6A50055B39D /* SigninButton.swift in Sources */,
 				26512B1724F4E74A0055B39D /* PasswordTextField.swift in Sources */,
+				26CBC58F24F76C2100E26790 /* ImagePicker.swift in Sources */,
 				26512B2324F4EFA80055B39D /* UserNameTextField.swift in Sources */,
 				26512B1524F4E7310055B39D /* EmailTextField.swift in Sources */,
 				26512AFE24F4DA1B0055B39D /* SceneDelegate.swift in Sources */,
